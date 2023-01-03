@@ -70,12 +70,15 @@ public class Weapon : MonoBehaviour
 
         target.position = new Vector2(direction.x, direction.y);
 
-        transform.right = direction;
+        if (mousePosition.y >= transform.position.y)
+        {
+            transform.right = direction;
 
-        if (mousePosition.x < transform.position.x)
-            spriteRenderer.flipY = true;
-        else
-            spriteRenderer.flipY = false;
+            if (mousePosition.x < transform.position.x)
+                spriteRenderer.flipY = true;
+            else
+                spriteRenderer.flipY = false;
+        }
 
     }
    
